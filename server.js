@@ -3,9 +3,11 @@ const server = jsonServer.create()
 const router = jsonServer.router('movies.json')
 const middlewares = jsonServer.defaults()
 
+const PORT = process.env.PORT || 3000;
+
 server.use(middlewares)
 server.use(router)
-server.listen(3000, () => {
-  console.log('JSON Server is running')
+server.listen(PORT, () => {
+  console.log('JSON Server is running on PORT ' + PORT)
 })
 
